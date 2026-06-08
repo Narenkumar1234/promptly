@@ -7,7 +7,8 @@
   "scripts": {
     "start": "electron .",
     "web": "npx serve . -l 5173 --single",
-    "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "dist": "electron-builder",
+    "dist:mac": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
     "check": "echo \"No compile step for static app\""
   },
   "build": {

@@ -1,0 +1,40 @@
+{
+  "name": "promptly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Send prompts and images to all major AI assistants simultaneously",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "web": "npx serve . -l 5173 --single",
+    "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder",
+    "check": "echo \"No compile step for static app\""
+  },
+  "build": {
+    "appId": "com.promptly.desktop",
+    "productName": "Promptly",
+    "icon": "build/icon.png",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg",
+      "identity": null,
+      "forceCodeSigning": false
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "main.js",
+      "desktop.html",
+      "node_modules/split.js/**"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^42.3.3",
+    "electron-builder": "^26.15.2",
+    "playwright": "^1.60.0"
+  },
+  "dependencies": {
+    "split.js": "^1.6.5"
+  }
+}

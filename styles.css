@@ -1,0 +1,180 @@
+:root {
+  --bg-1: #fff8eb;
+  --bg-2: #ffe2c5;
+  --ink: #1f2a1f;
+  --muted: #4f5a50;
+  --accent: #e1582b;
+  --accent-2: #0f7b6c;
+  --card: rgba(255, 250, 240, 0.92);
+  --line: rgba(31, 42, 31, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  min-block-size: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(15, 123, 108, 0.18), transparent 40%),
+    radial-gradient(circle at 85% 0%, rgba(225, 88, 43, 0.22), transparent 34%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+.app-shell {
+  inline-size: min(960px, 92vw);
+  margin: 2.4rem auto 3.2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero {
+  padding: 1rem 0.2rem;
+  animation: rise 450ms ease-out;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: "Menlo", "Consolas", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-size: 0.76rem;
+}
+
+h1 {
+  margin: 0.4rem 0 0.6rem;
+  line-height: 1.05;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-inline-size: 74ch;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 34px rgba(15, 20, 10, 0.09);
+  animation: rise 550ms ease-out;
+}
+
+.card.small {
+  animation-duration: 650ms;
+}
+
+.label {
+  display: block;
+  margin-block-end: 0.42rem;
+  font-weight: 600;
+}
+
+textarea {
+  inline-size: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.78rem;
+  font: inherit;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+textarea:focus {
+  outline: 2px solid rgba(15, 123, 108, 0.35);
+  border-color: var(--accent-2);
+}
+
+fieldset {
+  border: 0;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem;
+}
+
+.site-option {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.site-option input {
+  margin: 0;
+}
+
+.site-name {
+  font-weight: 600;
+}
+
+.site-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.actions {
+  margin-block-start: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.62rem 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--accent), #ee7f2e);
+  color: #1b160d;
+}
+
+button.secondary {
+  background: linear-gradient(120deg, var(--accent-2), #1da38c);
+}
+
+.status-list {
+  margin: 0.4rem 0 0;
+  padding-inline-start: 1.1rem;
+  color: var(--muted);
+}
+
+.status-list li + li {
+  margin-block-start: 0.32rem;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    margin-block-start: 1.2rem;
+  }
+
+  .card {
+    padding: 0.9rem;
+  }
+}

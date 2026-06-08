@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Auto Launcher</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Prompt Router</p>
+        <h1>Launch one prompt across multiple AI websites</h1>
+        <p class="subtitle">
+          This page can open selected AI websites in a tiled window grid to view them all at once. Paste your prompt and drop your images into each window manually!
+        </p>
+      </section>
+
+      <section class="card">
+        <label class="label" for="promptInput">Prompt</label>
+        <textarea id="promptInput" rows="6" placeholder="Write your prompt once..." required></textarea>
+
+        <fieldset>
+          <legend class="label">Target websites</legend>
+          <div id="siteGrid" class="site-grid"></div>
+        </fieldset>
+
+        <div class="actions">
+          <button id="launchButton" type="button">Open Selected Sites</button>
+          <button id="copyButton" type="button" class="secondary">Copy Prompt</button>
+        </div>
+      </section>
+
+      <section class="card small">
+        <h2>Status</h2>
+        <ul id="statusList" class="status-list"></ul>
+      </section>
+    </main>
+
+    <template id="siteCheckboxTemplate">
+      <div class="site-option">
+        <input type="checkbox" class="site-checkbox" />
+        <span class="site-name"></span>
+        <span class="site-note"></span>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
